@@ -461,8 +461,8 @@ ${selectedBillboardsData
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <MapPin className="w-12 h-12 mx-auto mb-4 text-black" />
-                <h3 className="text-3xl font-black mb-2">نملك العدد الكافي لحملتك</h3>
-                <p className="text-lg font-bold">مواقع إعلانية</p>
+                <h3 className="text-3xl font-black mb-2"> نملك مواقع كافية لحملتك الإعلانية</h3>
+                <p className="text-lg font-bold"></p>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <Star className="w-12 h-12 mx-auto mb-4 text-black" />

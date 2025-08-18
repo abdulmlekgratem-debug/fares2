@@ -81,7 +81,7 @@ ${emailMessage ? `💬 ملاحظات إضافية:\n${emailMessage}\n\n` : ""}
 شكراً لكم
 الفارس الذهبي للدعاية والإعلان`
 
-    const whatsappUrl = `https://wa.me/966555123456?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/218913228908?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
     onClose()
   }

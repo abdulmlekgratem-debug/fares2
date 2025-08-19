@@ -318,7 +318,7 @@ ${selectedBillboardsData
       <body>
         <div class="header">
           <div class="logo-section">
-            <img src="${window.location.origin}/logofares.svg" alt="شعار الشركة" class="logo" onerror="this.style.display='none'" />
+            <img src="${window.location.origin}/logo-symbol.svg" alt="شعار الشركة" class="logo" onerror="this.style.display='none'" />
             <div class="company-info">
               <div class="company-name-ar">الفــــارس الذهبــــي</div>
               <div class="company-name-en">AL FARES AL DAHABI</div>

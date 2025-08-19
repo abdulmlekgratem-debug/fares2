@@ -69,8 +69,8 @@ export default function SearchFilters({
 
           <div className="flex flex-wrap gap-6 items-center justify-center">
             <div className="flex flex-wrap gap-4">
-              <Select value={selectedMunicipality} onValueChange={setSelectedMunicipality}>
-                <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
+              <Select value={selectedMunicipality} onValueChange={setSelectedMunicipality} searchable>
+                <SelectTrigger className="w-56 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع البلديات" />
                 </SelectTrigger>
                 <SelectContent>
@@ -83,7 +83,7 @@ export default function SearchFilters({
                 </SelectContent>
               </Select>
 
-              <Select value={selectedSize} onValueChange={setSelectedSize}>
+              <Select value={selectedSize} onValueChange={setSelectedSize} searchable>
                 <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع المقاسات" />
                 </SelectTrigger>
@@ -97,7 +97,7 @@ export default function SearchFilters({
                 </SelectContent>
               </Select>
 
-              <Select value={selectedAvailability} onValueChange={setSelectedAvailability}>
+              <Select value={selectedAvailability} onValueChange={setSelectedAvailability} searchable>
                 <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع الحالات" />
                 </SelectTrigger>

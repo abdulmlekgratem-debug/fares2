@@ -20,7 +20,7 @@ export default function App() {
   const [selectedSize, setSelectedSize] = useState("all")
   const [selectedAvailability, setSelectedAvailability] = useState("all")
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid")
-  const [showAllBillboards, setShowAllBillboards] = useState(false)
+  const [showAllBillboards, setShowAllBillboards] = useState(true)
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
   const [showMap, setShowMap] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
@@ -40,7 +40,7 @@ export default function App() {
         setLoading(true)
         const data = await loadBillboardsFromExcel()
         setBillboards(data)
-        setFilteredBillboards(data.slice(0, 8))
+        setFilteredBillboards(data)
       } catch (error) {
         console.error('Error loading billboards:', error)
       } finally {
@@ -497,6 +497,8 @@ ${selectedBillboardsData
 
         {showMap && <InteractiveMap billboards={filteredBillboards} onImageView={setSelectedImage} />}
 
+
+
         <div className="flex items-center justify-between mb-8">
           <p className="text-gray-700 text-lg font-semibold">
             عرض <span className="font-black text-yellow-600">{paginatedBillboards.length}</span> من أصل
@@ -596,23 +598,33 @@ ${selectedBillboardsData
               السابق
             </Button>
 
-            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-              const pageNum = i + 1
-              return (
-                <Button
-                  key={pageNum}
-                  variant={currentPage === pageNum ? "default" : "outline"}
-                  onClick={() => setCurrentPage(pageNum)}
-                  className={`w-12 h-12 ${
-                    currentPage === pageNum
-                      ? "bg-yellow-500 text-black hover:bg-yellow-600"
-                      : "border-yellow-400 text-yellow-600 hover:bg-yellow-50"
-                  }`}
-                >
-                  {pageNum}
-                </Button>
-              )
-            })}
+            {(() => {
+              const maxVisiblePages = 5
+              let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2))
+              let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
+              
+              if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1)
+              }
+              
+              return Array.from({ length: endPage - startPage + 1 }, (_, i) => {
+                const pageNum = startPage + i
+                return (
+                  <Button
+                    key={pageNum}
+                    variant={currentPage === pageNum ? "default" : "outline"}
+                    onClick={() => setCurrentPage(pageNum)}
+                    className={`w-12 h-12 ${
+                      currentPage === pageNum
+                        ? "bg-yellow-500 text-black hover:bg-yellow-600"
+                        : "border-yellow-400 text-yellow-600 hover:bg-yellow-50"
+                    }`}
+                  >
+                    {pageNum}
+                  </Button>
+                )
+              })
+            })()}
 
             <Button
               variant="outline"

@@ -47,7 +47,7 @@ export default function SearchFilters({
   onPrint,
 }: SearchFiltersProps) {
   return (
-    <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-12 border-4 border-yellow-300">
+    <div className="relative z-[100000] bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-12 border-4 border-yellow-300">
       <div className="space-y-8">
         <div className="text-center">
           <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">ابحث عن موقعك الإعلاني المثالي</h2>
@@ -69,8 +69,8 @@ export default function SearchFilters({
 
           <div className="flex flex-wrap gap-6 items-center justify-center">
             <div className="flex flex-wrap gap-4">
-              <Select value={selectedMunicipality} onValueChange={setSelectedMunicipality}>
-                <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
+              <Select value={selectedMunicipality} onValueChange={setSelectedMunicipality} searchable>
+                <SelectTrigger className="w-56 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع البلديات" />
                 </SelectTrigger>
                 <SelectContent>
@@ -83,7 +83,7 @@ export default function SearchFilters({
                 </SelectContent>
               </Select>
 
-              <Select value={selectedSize} onValueChange={setSelectedSize}>
+              <Select value={selectedSize} onValueChange={setSelectedSize} searchable>
                 <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع المقاسات" />
                 </SelectTrigger>
@@ -97,14 +97,14 @@ export default function SearchFilters({
                 </SelectContent>
               </Select>
 
-              <Select value={selectedAvailability} onValueChange={setSelectedAvailability}>
+              <Select value={selectedAvailability} onValueChange={setSelectedAvailability} searchable>
                 <SelectTrigger className="w-48 border-2 border-yellow-300 rounded-full text-gray-900">
                   <SelectValue placeholder="جميع الحالات" />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">جميع الحالات</SelectItem>
-                  <SelectItem value="available">متاحة</SelectItem>
-                  <SelectItem value="soon">متاحة قريباً</SelectItem>
+                  <SelectItem value="متاحة">متاحة</SelectItem>
+                  <SelectItem value="متاحة قريباً">متاحة قريباً</SelectItem>
                 </SelectContent>
               </Select>
             </div>

@@ -73,10 +73,12 @@ export default function App() {
     }
 
     if (selectedAvailability !== "all") {
+      const isAvailable = selectedAvailability === "available" || selectedAvailability === "متاحة"
+      const isSoon = selectedAvailability === "soon" || selectedAvailability === "متاحة قريباً"
       filtered = filtered.filter((billboard) => {
-        if (selectedAvailability === "available") {
+        if (isAvailable) {
           return billboard.status === "متاح"
-        } else if (selectedAvailability === "soon") {
+        } else if (isSoon) {
           return billboard.status === "قريباً"
         }
         return true
@@ -451,7 +453,7 @@ ${selectedBillboardsData
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <Award className="w-12 h-12 mx-auto mb-4 text-black" />
-                <h3 className="text-3xl font-black mb-2">+18</h3>
+                <h3 className="text-3xl font-black mb-2">+20</h3>
                 <p className="text-lg font-bold">سنة خبرة</p>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
@@ -461,8 +463,8 @@ ${selectedBillboardsData
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <MapPin className="w-12 h-12 mx-auto mb-4 text-black" />
-                <h3 className="text-3xl font-black mb-2">+900</h3>
-                <p className="text-lg font-bold">موقع إعلاني</p>
+                <h3 className="text-3xl font-black mb-2"> نملك مواقع كافية لحملتك الإعلانية</h3>
+                <p className="text-lg font-bold"></p>
               </div>
               <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
                 <Star className="w-12 h-12 mx-auto mb-4 text-black" />

@@ -55,15 +55,15 @@ export default function BillboardCard({ billboard, isSelected, onToggleSelection
       <CardContent className="p-4">
         <div className="text-right space-y-4">
           <div className="border-b border-gray-100 pb-3">
-            <h3 className="text-2xl font-black text-gray-900 leading-tight tracking-tight">{billboard.name}</h3>
+            <h3 className="text-2xl font-black text-gray-900 leading-tight tracking-tight font-sans">{billboard.name}</h3>
           </div>
 
           <div className="space-y-2">
             <div className="flex items-start text-gray-700 justify-between">
               <MapPin className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
               <div className="text-right flex-1">
-                <p className="text-lg font-black leading-snug text-gray-800">{billboard.location}</p>
-                <p className="text-base text-gray-700 mt-1 font-bold">{billboard.area}</p>
+                <p className="text-lg font-black leading-snug text-gray-800 font-sans">{billboard.location}</p>
+                <p className="text-base text-gray-700 mt-1 font-bold font-sans">{billboard.area}</p>
               </div>
             </div>
           </div>

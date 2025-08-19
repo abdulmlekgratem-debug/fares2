@@ -1,65 +1,63 @@
 import * as React from "react"
 import { ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Input } from "@/components/ui/input"
 
-interface SelectProps {
+// Context
+const SelectContext = React.createContext<{
+  value: string
+  onValueChange: (value: string) => void
+  isOpen: boolean
+  setIsOpen: (open: boolean) => void
+  searchable?: boolean
+  searchTerm: string
+  setSearchTerm: (val: string) => void
+} | null>(null)
+
+const useSelectContext = () => {
+  const context = React.useContext(SelectContext)
+  if (!context) throw new Error("Select.* must be used within <Select>")
+  return context
+}
+
+// Select
+const Select = ({ value, onValueChange, children, searchable = false }: {
   value: string
   onValueChange: (value: string) => void
   children: React.ReactNode
-}
-
-interface SelectTriggerProps {
-  children: React.ReactNode
-  className?: string
-}
-
-interface SelectContentProps {
-  children: React.ReactNode
-  className?: string
-}
-
-interface SelectItemProps {
-  value: string
-  children: React.ReactNode
-  className?: string
-}
-
-interface SelectValueProps {
-  placeholder?: string
-}
-
-const Select = ({ value, onValueChange, children }: SelectProps) => {
+  searchable?: boolean
+}) => {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [searchTerm, setSearchTerm] = React.useState("")
 
   return (
-    <div className="relative">
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child as any, {
-            value,
-            onValueChange,
-            isOpen,
-            setIsOpen,
-          })
-        }
-        return child
-      })}
-    </div>
+    <SelectContext.Provider value={{ value, onValueChange, isOpen, setIsOpen, searchable, searchTerm, setSearchTerm }}>
+      <div className="relative">
+        {children}
+      </div>
+    </SelectContext.Provider>
   )
 }
 
-const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps & any) => {
+// Trigger
+const SelectTrigger = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const { setIsOpen, setSearchTerm } = useSelectContext()
   return (
     <button
+      type="button"
       className={cn(
-        "flex h-12 w-full items-center justify-between rounded-full border-2 border-yellow-300 bg-white px-4 py-3 text-base text-gray-900",
-        "focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+        "relative z-[100000] flex h-12 w-full items-center justify-between rounded-full border-2 border-yellow-300 bg-white px-4 py-3 text-base text-gray-900",
+        "focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2",
         "shadow-md hover:shadow-lg transition-all duration-300",
         "rtl:pr-4 rtl:pl-2 ltr:pl-4 ltr:pr-2 text-right",
+        "disabled:cursor-not-allowed disabled:opacity-50",
         className
       )}
-      onClick={() => props.setIsOpen(!props.isOpen)}
-      {...props}
+      onClick={() => setIsOpen(open => {
+        const next = !open
+        if (!next) setSearchTerm("")
+        return next
+      })}
     >
       {children}
       <ChevronDown className="h-5 w-5 text-yellow-600 opacity-70" />
@@ -67,65 +65,90 @@ const SelectTrigger = ({ children, className, ...props }: SelectTriggerProps & a
   )
 }
 
-const SelectContent = ({ children, className, ...props }: SelectContentProps & any) => {
-  if (!props.isOpen) return null
+// Value
+const SelectValue = ({ placeholder }: { placeholder?: string }) => {
+  const { value } = useSelectContext()
+  const displayValue = value === "all" || !value ? placeholder : value
+  return (
+    <span
+      className="block truncate text-right pr-2 text-gray-900"
+      style={{ textAlign: 'right', direction: 'rtl' }}
+    >
+      {displayValue || placeholder}
+    </span>
+  )
+}
+
+// Content
+const SelectContent = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  const { isOpen, searchable, searchTerm, setSearchTerm } = useSelectContext()
+  if (!isOpen) return null
+
+  const normalize = (s: string) => s?.toString().toLowerCase().trim()
+
+  const filteredChildren = React.Children.toArray(children).filter((child) => {
+    if (!searchable) return true
+    const q = normalize(searchTerm)
+    if (!q) return true
+    if (React.isValidElement(child) && typeof child.props?.value === 'string') {
+      const val: string = child.props.value
+      return normalize(val).includes(q)
+    }
+    return true
+  })
 
   return (
     <div
       className={cn(
-        "absolute top-full left-0 z-50 w-full min-w-[8rem] rounded-xl border border-yellow-300 p-1 shadow-2xl",
-        "bg-gradient-to-br from-yellow-400 via-yellow-500 to-orange-500 text-white",
-        "rtl:text-right ltr:text-left",
-        "max-h-32 overflow-y-auto overscroll-contain", // ← تم التحديث
+        "absolute top-full right-0 left-0 z-[100001] mt-1 w-full min-w-[8rem] max-h-64 overflow-y-auto overscroll-contain",
+        "rounded-xl border border-yellow-300 bg-white p-1 text-gray-900 shadow-2xl",
         "scrollbar-thin scrollbar-thumb-yellow-300 scrollbar-track-transparent",
-        "mt-1", // مسافة صغيرة بين التريغر والقائمة
+        "rtl:text-right ltr:text-left",
         className
       )}
-      style={{ direction: "rtl" }}
+      style={{ direction: 'rtl' }}
     >
-      {React.Children.map(children, (child) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child as any, {
-            onValueChange: props.onValueChange,
-            setIsOpen: props.setIsOpen,
-          })
-        }
-        return child
-      })}
+      {searchable && (
+        <div className="p-1 sticky top-0 bg-white z-10 border-b border-yellow-200">
+          <Input
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            placeholder="اكتب للبحث..."
+            className="h-10 rounded-full bg-white text-gray-900 placeholder:text-gray-500 border border-yellow-200 focus:border-yellow-300"
+          />
+        </div>
+      )}
+      <div className="py-1">
+        {filteredChildren.length > 0 ? (
+          filteredChildren as React.ReactNode
+        ) : (
+          <div className="py-2 px-3 text-sm text-gray-600">لا توجد نتائج</div>
+        )}
+      </div>
     </div>
   )
 }
-const SelectItem = ({ value, children, className, ...props }: SelectItemProps & any) => {
+
+// Item
+const SelectItem = ({ value, children, className }: { value: string; children: React.ReactNode; className?: string }) => {
+  const { onValueChange, setIsOpen, setSearchTerm } = useSelectContext()
   return (
     <div
       className={cn(
-        "relative flex w-full cursor-default select-none items-center rounded-sm py-2 pr-4 pl-10 text-base outline-none",
-        "text-white hover:bg-yellow-200 hover:text-gray-900 focus:bg-yellow-200 focus:text-gray-900",
+        "relative flex w-full cursor-pointer select-none items-center rounded-sm py-2 pr-4 pl-10 text-base",
+        "text-gray-900 hover:bg-yellow-50 hover:text-gray-900 focus:bg-yellow-50 outline-none",
         "rtl:text-right ltr:text-left",
         className
       )}
       onClick={() => {
-        props.onValueChange(value)
-        props.setIsOpen(false)
+        onValueChange(value)
+        setIsOpen(false)
+        setSearchTerm("")
       }}
-      style={{ direction: "rtl", textAlign: "right" }}
+      style={{ direction: 'rtl', textAlign: 'right' }}
     >
       {children}
     </div>
-  )
-}
-
-const SelectValue = ({ placeholder, ...props }: SelectValueProps & any) => {
-  const displayValue =
-    props.value === "all" || !props.value ? placeholder : props.value
-
-  return (
-    <span
-      className="block truncate text-right pr-2 text-gray-900"
-      style={{ textAlign: "right", direction: "rtl" }}
-    >
-      {displayValue || placeholder}
-    </span>
   )
 }
 

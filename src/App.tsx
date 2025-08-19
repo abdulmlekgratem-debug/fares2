@@ -73,10 +73,12 @@ export default function App() {
     }
 
     if (selectedAvailability !== "all") {
+      const isAvailable = selectedAvailability === "available" || selectedAvailability === "متاحة"
+      const isSoon = selectedAvailability === "soon" || selectedAvailability === "متاحة قريباً"
       filtered = filtered.filter((billboard) => {
-        if (selectedAvailability === "available") {
+        if (isAvailable) {
           return billboard.status === "متاح"
-        } else if (selectedAvailability === "soon") {
+        } else if (isSoon) {
           return billboard.status === "قريباً"
         }
         return true

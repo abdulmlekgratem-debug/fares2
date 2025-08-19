@@ -103,8 +103,8 @@ export default function SearchFilters({
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">جميع الحالات</SelectItem>
-                  <SelectItem value="available">متاحة</SelectItem>
-                  <SelectItem value="soon">متاحة قريباً</SelectItem>
+                  <SelectItem value="متاحة">متاحة</SelectItem>
+                  <SelectItem value="متاحة قريباً">متاحة قريباً</SelectItem>
                 </SelectContent>
               </Select>
             </div>

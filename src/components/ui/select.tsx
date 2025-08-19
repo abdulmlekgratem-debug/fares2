@@ -100,7 +100,7 @@ const SelectContent = ({ children, className }: { children: React.ReactNode; cla
   return (
     <div
       className={cn(
-        "absolute top-full right-0 left-0 z-[99999] mt-1 w-full min-w-[8rem] max-h-64 overflow-y-auto overscroll-contain",
+        "absolute top-full right-0 left-0 z-[100001] mt-1 w-full min-w-[8rem] max-h-64 overflow-y-auto overscroll-contain",
         "rounded-xl border border-yellow-300 bg-white p-1 text-gray-900 shadow-2xl",
         "scrollbar-thin scrollbar-thumb-yellow-300 scrollbar-track-transparent",
         "rtl:text-right ltr:text-left",

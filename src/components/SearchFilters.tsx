@@ -47,7 +47,7 @@ export default function SearchFilters({
   onPrint,
 }: SearchFiltersProps) {
   return (
-    <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-12 border-4 border-yellow-300">
+    <div className="relative z-[100000] bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 mb-12 border-4 border-yellow-300">
       <div className="space-y-8">
         <div className="text-center">
           <h2 className="text-4xl font-black text-gray-900 mb-4 tracking-tight">ابحث عن موقعك الإعلاني المثالي</h2>

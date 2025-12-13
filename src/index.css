@@ -1,0 +1,349 @@
+/* Doran Font */
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Manrope Font */
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  /* Dark Premium Theme - Gold & Black */
+  --background: 220 20% 8%;
+  --foreground: 45 90% 88%;
+  --card: 220 15% 12%;
+  --card-foreground: 45 90% 88%;
+  --popover: 220 15% 10%;
+  --popover-foreground: 45 90% 88%;
+  --primary: 43 100% 50%;
+  --primary-foreground: 220 20% 8%;
+  --secondary: 220 15% 18%;
+  --secondary-foreground: 45 90% 88%;
+  --muted: 220 15% 20%;
+  --muted-foreground: 45 30% 60%;
+  --accent: 43 80% 45%;
+  --accent-foreground: 220 20% 8%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 43 40% 25%;
+  --input: 220 15% 15%;
+  --ring: 43 100% 50%;
+  --radius: 1rem;
+  
+  /* Premium Gold Colors */
+  --gold: 43 100% 50%;
+  --gold-light: 45 100% 65%;
+  --gold-dark: 40 90% 35%;
+  --gold-glow: 43 100% 50%;
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, hsl(43, 100%, 50%), hsl(35, 90%, 45%));
+  --gradient-dark: linear-gradient(180deg, hsl(220, 20%, 10%), hsl(220, 20%, 6%));
+  --gradient-card: linear-gradient(145deg, hsl(220, 15%, 14%), hsl(220, 15%, 10%));
+  
+  /* Shadows */
+  --shadow-gold: 0 0 30px hsl(43 100% 50% / 0.3);
+  --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+}
+
+.light {
+  /* Light Premium Theme - Gold & White */
+  --background: 45 30% 96%;
+  --foreground: 220 20% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 20% 15%;
+  --primary: 43 100% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 45 20% 90%;
+  --secondary-foreground: 220 20% 15%;
+  --muted: 45 20% 85%;
+  --muted-foreground: 220 10% 45%;
+  --accent: 43 80% 40%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 43 30% 75%;
+  --input: 45 20% 92%;
+  --ring: 43 100% 45%;
+  
+  /* Premium Gold Colors - Light Mode */
+  --gold: 43 100% 45%;
+  --gold-light: 45 100% 55%;
+  --gold-dark: 40 90% 30%;
+  --gold-glow: 43 100% 45%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Doran', 'Manrope', 'Tajawal', 'Inter', sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  direction: rtl;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Doran', 'Manrope', 'Tajawal', 'Inter', sans-serif;
+}
+
+.custom-billboard-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  font-family: 'Manrope', 'Tajawal', sans-serif;
+  color: hsl(var(--card-foreground));
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(43, 100%, 50%), hsl(35, 90%, 40%));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(43, 100%, 55%), hsl(35, 90%, 45%));
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(43 100% 50% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(43 100% 50% / 0.5);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(43, 100%, 50%) 0%,
+    hsl(45, 100%, 70%) 50%,
+    hsl(43, 100%, 50%) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--primary) / 0.2);
+}
+
+/* Gold border glow */
+.gold-border-glow {
+  border: 1px solid hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.1), inset 0 0 20px hsl(var(--primary) / 0.05);
+}
+
+/* Shadow utilities */
+.shadow-gold {
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+}
+
+/* Card hover animations */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.4);
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

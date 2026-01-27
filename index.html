@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo-symbol.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الفارس الذهبي للدعاية والإعلان - اللوحات الإعلانية في ليبيا</title>
+    <meta name="description" content="شركة الفارس الذهبي للدعاية والإعلان - تأجير اللوحات الطرقية في ليبيا" />
+    
+    <!-- Preload Manrope Fonts -->
+    <link rel="preload" href="/fonts/Manrope-Regular.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/fonts/Manrope-Medium.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/fonts/Manrope-SemiBold.ttf" as="font" type="font/truetype" crossorigin>
+    <link rel="preload" href="/fonts/Manrope-Bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/fonts/Manrope-ExtraBold.otf" as="font" type="font/otf" crossorigin>
+    
+    <!-- Google Fonts - Tajawal for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+      /* Inline critical font-face declarations */
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-Regular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-Medium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-Bold.otf') format('opentype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Manrope';
+        src: url('/fonts/Manrope-ExtraBold.otf') format('opentype');
+        font-weight: 800;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased" style="font-family: 'Manrope', 'Tajawal', sans-serif;">
+    <div id="root">
+      <!-- شاشة التحميل الأولية - تظهر قبل تحميل React -->
+      <div id="initial-loader" style="
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        flex-direction: column;
+        gap: 1.5rem;
+      ">
+        <img src="/logo-symbol.svg" alt="الفارس الذهبي" style="
+          width: 80px;
+          height: 80px;
+          animation: pulse 2s ease-in-out infinite;
+        " onerror="this.style.display='none'" />
+        <div style="
+          width: 40px;
+          height: 40px;
+          border: 3px solid rgba(212, 175, 55, 0.2);
+          border-top-color: #d4af37;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+        "></div>
+        <p style="
+          color: rgba(255, 255, 255, 0.7);
+          font-family: 'Tajawal', sans-serif;
+          font-size: 14px;
+          margin: 0;
+        ">جاري التحميل...</p>
+      </div>
+      <style>
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(0.95); }
+        }
+      </style>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

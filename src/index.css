@@ -1,0 +1,1340 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* Doran Font */
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Doran';
+  src: url('/fonts/Doran-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Manrope Font */
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+.dark {
+  /* Dark Premium Theme - Gold & Black */
+  --background: 220 20% 8%;
+  --foreground: 45 90% 88%;
+  --card: 220 15% 12%;
+  --card-foreground: 45 90% 88%;
+  --popover: 220 15% 10%;
+  --popover-foreground: 45 90% 88%;
+  --primary: 43 100% 50%;
+  --primary-foreground: 220 20% 8%;
+  --secondary: 220 15% 18%;
+  --secondary-foreground: 45 90% 88%;
+  --muted: 220 15% 20%;
+  --muted-foreground: 45 30% 60%;
+  --accent: 43 80% 45%;
+  --accent-foreground: 220 20% 8%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 43 40% 25%;
+  --input: 220 15% 15%;
+  --ring: 43 100% 50%;
+  --radius: 1rem;
+  
+  /* Premium Gold Colors */
+  --gold: 43 100% 50%;
+  --gold-light: 45 100% 65%;
+  --gold-dark: 40 90% 35%;
+  --gold-glow: 43 100% 50%;
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, hsl(43, 100%, 50%), hsl(35, 90%, 45%));
+  --gradient-dark: linear-gradient(180deg, hsl(220, 20%, 10%), hsl(220, 20%, 6%));
+  --gradient-card: linear-gradient(145deg, hsl(220, 15%, 14%), hsl(220, 15%, 10%));
+  
+  /* Dynamic Background */
+  --bg-mesh-1: hsl(43, 100%, 50%);
+  --bg-mesh-2: hsl(35, 90%, 40%);
+  --bg-mesh-3: hsl(220, 20%, 8%);
+  
+  /* Shadows */
+  --shadow-gold: 0 0 30px hsl(43 100% 50% / 0.3);
+  --shadow-card: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+}
+
+.light {
+  /* Light Premium Theme - Luxurious Gold */
+  --background: 48 25% 96%;
+  --foreground: 220 20% 15%;
+  --card: 0 0% 100%;
+  --card-foreground: 220 20% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 220 20% 15%;
+  --primary: 45 85% 45%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 48 15% 90%;
+  --secondary-foreground: 220 20% 15%;
+  --muted: 48 12% 85%;
+  --muted-foreground: 220 10% 40%;
+  --accent: 43 75% 40%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 48 20% 80%;
+  --input: 48 15% 93%;
+  --ring: 45 85% 45%;
+  
+  /* Premium Gold Colors - Light Mode - Rich Gold */
+  --gold: 45 85% 45%;
+  --gold-light: 48 90% 52%;
+  --gold-dark: 42 80% 35%;
+  --gold-glow: 45 85% 45%;
+  
+  /* Light Mode Dynamic Background - Warm Gold Tones */
+  --bg-mesh-1: hsl(45, 80%, 55%);
+  --bg-mesh-2: hsl(42, 70%, 48%);
+  --bg-mesh-3: hsl(48, 25%, 96%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Doran', 'Manrope', 'Tajawal', 'Inter', sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  direction: rtl;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Doran', 'Manrope', 'Tajawal', 'Inter', sans-serif;
+}
+
+.custom-billboard-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-div-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Leaflet custom marker styling */
+.custom-billboard-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Force Leaflet z-index to be lower than UI controls */
+.leaflet-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-tile-pane {
+  z-index: 1 !important;
+}
+
+.leaflet-overlay-pane {
+  z-index: 2 !important;
+}
+
+.leaflet-shadow-pane {
+  z-index: 3 !important;
+}
+
+.leaflet-marker-pane {
+  z-index: 4 !important;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 5 !important;
+}
+
+.leaflet-popup-pane {
+  z-index: 20 !important;
+}
+
+.leaflet-map-pane {
+  z-index: 1 !important;
+}
+
+/* Ensure Leaflet container doesn't overflow with high z-index */
+.leaflet-container {
+  z-index: 1 !important;
+}
+
+/* Pulse animation for selected markers */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(212,175,55,0.5), 0 0 30px rgba(212,175,55,0.3), inset 0 2px 4px rgba(255,255,255,0.2);
+  }
+}
+
+@keyframes spin-slow {
+  from { transform: translateX(-50%) rotate(-45deg); }
+  to { transform: translateX(-50%) rotate(315deg); }
+}
+
+/* Leaflet popup styling - Remove white background/border */
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Manrope', 'Tajawal', sans-serif;
+  color: hsl(var(--card-foreground));
+  width: auto !important;
+}
+
+.leaflet-popup-tip-container {
+  display: none !important;
+}
+
+.leaflet-popup {
+  margin-bottom: 10px !important;
+}
+
+/* Leaflet popup close button - Modern style */
+.leaflet-popup-close-button {
+  top: 12px !important;
+  right: 12px !important;
+  width: 28px !important;
+  height: 28px !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  line-height: 26px !important;
+  text-align: center !important;
+  z-index: 10 !important;
+  transition: all 0.2s ease !important;
+}
+
+.leaflet-popup-close-button:hover {
+  background: rgba(212,175,55,0.8) !important;
+  color: #1a1a2e !important;
+}
+
+/* Leaflet tooltip dark theme */
+.leaflet-tooltip-dark {
+  background: linear-gradient(135deg, rgba(26,26,46,0.98), rgba(15,15,25,0.98)) !important;
+  border: 1px solid rgba(212,175,55,0.4) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+  color: #fff !important;
+  font-family: 'Doran', sans-serif !important;
+}
+
+.leaflet-tooltip-dark::before {
+  border-top-color: rgba(26,26,46,0.98) !important;
+}
+
+/* Selected marker tooltip with golden glow */
+.leaflet-tooltip-selected {
+  background: linear-gradient(135deg, rgba(26,26,46,0.98), rgba(15,15,25,0.98)) !important;
+  border: 2px solid #d4af37 !important;
+  border-radius: 12px !important;
+  color: #fff !important;
+  padding: 12px 16px !important;
+  box-shadow: 0 0 20px rgba(212,175,55,0.5), 0 8px 32px rgba(0,0,0,0.6) !important;
+  font-family: 'Doran', sans-serif !important;
+  animation: pulse-selected 2s ease-in-out infinite !important;
+}
+
+.leaflet-tooltip-selected::before {
+  border-top-color: #d4af37 !important;
+}
+
+@keyframes pulse-selected {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212,175,55,0.5), 0 8px 32px rgba(0,0,0,0.6);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(212,175,55,0.8), 0 8px 32px rgba(0,0,0,0.6);
+  }
+}
+
+/* Google Maps hover tooltip styling */
+.gm-style .gm-style-iw-tc {
+  display: none !important;
+}
+
+.gm-style .gm-style-iw-c {
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.gm-style .gm-style-iw-d {
+  overflow: visible !important;
+  padding: 0 !important;
+  max-height: none !important;
+}
+
+.gm-style .gm-style-iw-t::after {
+  display: none !important;
+}
+
+.gm-style-iw-tc::after {
+  display: none !important;
+}
+
+/* Hide the default background div */
+.gm-style .gm-style-iw {
+  background: transparent !important;
+}
+
+.gm-style .gm-style-iw-chr {
+  display: none !important;
+}
+
+/* Google Maps - Hide ALL default controls */
+.gm-style .gm-style-iw-c button.gm-ui-hover-effect,
+.gm-style .gm-style-iw-c button.gm-ui-hover-effect img,
+.gm-style .gmnoprint,
+.gm-style .gm-bundled-control,
+.gm-style .gm-svpc,
+.gm-style .gm-fullscreen-control,
+.gm-style [class*="gm-control"],
+.gm-style .gm-style-mtc,
+.gm-style div[draggable="false"] > div:last-child {
+  display: none !important;
+}
+
+/* Keep map type selector if needed but hide everything else */
+.gm-style .gm-style-cc,
+.gm-style a[href*="google"],
+.gm-style a[title*="Google"] {
+  display: none !important;
+}
+
+/* Marker label styling */
+.marker-label {
+  background: rgba(26, 26, 46, 0.95);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px !important;
+  font-weight: bold !important;
+  white-space: nowrap;
+}
+
+/* Leaflet MarkerCluster custom styling */
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background: transparent !important;
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background: transparent !important;
+}
+
+.custom-cluster-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.leaflet-marker-icon.custom-billboard-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Animated Route Line Styles */
+.recorded-route-glow {
+  filter: drop-shadow(0 0 8px #06b6d4) drop-shadow(0 0 16px #06b6d4);
+  animation: route-glow-pulse 2s ease-in-out infinite;
+}
+
+.recorded-route-animated {
+  animation: route-dash-flow 1s linear infinite;
+}
+
+@keyframes route-glow-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    filter: drop-shadow(0 0 8px #06b6d4) drop-shadow(0 0 16px #06b6d4);
+  }
+  50% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 12px #06b6d4) drop-shadow(0 0 24px #06b6d4);
+  }
+}
+
+@keyframes route-dash-flow {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -20;
+  }
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, hsl(43, 100%, 50%), hsl(35, 90%, 40%));
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, hsl(43, 100%, 55%), hsl(35, 90%, 45%));
+}
+
+/* Animations */
+@keyframes fullscreen-in {
+  from {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fullscreen-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+/* Staggered Animation Delays */
+.animate-delay-100 { animation-delay: 0.1s; opacity: 0; }
+.animate-delay-200 { animation-delay: 0.2s; opacity: 0; }
+.animate-delay-300 { animation-delay: 0.3s; opacity: 0; }
+.animate-delay-400 { animation-delay: 0.4s; opacity: 0; }
+.animate-delay-500 { animation-delay: 0.5s; opacity: 0; }
+.animate-delay-600 { animation-delay: 0.6s; opacity: 0; }
+.animate-delay-700 { animation-delay: 0.7s; opacity: 0; }
+.animate-delay-800 { animation-delay: 0.8s; opacity: 0; }
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(43 100% 50% / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(43 100% 50% / 0.5);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    hsl(43, 100%, 50%) 0%,
+    hsl(45, 100%, 70%) 50%,
+    hsl(43, 100%, 50%) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Dynamic Mesh Background */
+@keyframes meshMove {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+  50% {
+    transform: translate(-5%, 5%) scale(0.95);
+  }
+  75% {
+    transform: translate(10%, -5%) scale(1.05);
+  }
+}
+
+@keyframes meshMove2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-10%, 5%) scale(1.05);
+  }
+  50% {
+    transform: translate(5%, -10%) scale(1.1);
+  }
+  75% {
+    transform: translate(-5%, 10%) scale(0.9);
+  }
+}
+
+@keyframes meshMove3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  33% {
+    transform: translate(15%, -10%) scale(1);
+  }
+  66% {
+    transform: translate(-10%, 15%) scale(1.15);
+  }
+}
+
+/* Fractal Glass Vertical Stripes Animation */
+@keyframes stripeWave {
+  0%, 100% {
+    transform: scaleY(1) translateY(0);
+    opacity: 0.4;
+  }
+  25% {
+    transform: scaleY(1.1) translateY(-2%);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scaleY(0.95) translateY(1%);
+    opacity: 0.3;
+  }
+  75% {
+    transform: scaleY(1.05) translateY(-1%);
+    opacity: 0.5;
+  }
+}
+
+@keyframes stripeGlow {
+  0%, 100% {
+    filter: blur(0px) brightness(1);
+  }
+  50% {
+    filter: blur(2px) brightness(1.3);
+  }
+}
+
+@keyframes waterFlow {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes horizontalShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.dynamic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: hsl(var(--background));
+}
+
+/* Fractal Glass Stripes Container */
+.fractal-stripes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.fractal-stripe {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  animation: stripeWave 4s ease-in-out infinite;
+}
+
+.fractal-stripe::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.15) 20%,
+    hsl(var(--primary) / 0.3) 50%,
+    hsl(var(--primary) / 0.15) 80%,
+    transparent 100%
+  );
+  animation: stripeGlow 3s ease-in-out infinite;
+}
+
+.fractal-stripe:nth-child(odd)::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.1) 30%,
+    hsl(var(--primary) / 0.25) 50%,
+    hsl(var(--primary) / 0.1) 70%,
+    transparent 100%
+  );
+}
+
+/* Water Flow Overlay */
+.water-overlay {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.08) 25%,
+      transparent 50%,
+      hsl(var(--primary) / 0.08) 75%,
+      transparent 100%
+    );
+  background-size: 200% 200%;
+  animation: waterFlow 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Shimmer Effect */
+.shimmer-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.shimmer-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.1) 50%,
+    transparent 100%
+  );
+  animation: horizontalShimmer 6s ease-in-out infinite;
+}
+
+.dynamic-bg::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: -30%;
+  right: -20%;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  background: radial-gradient(ellipse at center, hsl(43, 100%, 55%) 0%, hsl(35, 90%, 45%) 40%, transparent 70%);
+  animation: meshMove 15s ease-in-out infinite;
+}
+
+.dynamic-bg::after {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  bottom: -25%;
+  left: -20%;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.45;
+  background: radial-gradient(ellipse at center, hsl(30, 85%, 50%) 0%, hsl(25, 80%, 40%) 40%, transparent 70%);
+  animation: meshMove2 20s ease-in-out infinite;
+}
+
+.mesh-3 {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 30%;
+  left: 20%;
+  border-radius: 50%;
+  filter: blur(130px);
+  background: radial-gradient(ellipse at center, hsl(40, 100%, 50%) 0%, hsl(35, 90%, 40%) 50%, transparent 70%);
+  animation: meshMove3 12s ease-in-out infinite;
+  opacity: 0.35;
+}
+
+.mesh-4 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 60%;
+  right: 10%;
+  border-radius: 50%;
+  filter: blur(100px);
+  background: radial-gradient(circle, hsl(45, 100%, 60%) 0%, transparent 60%);
+  animation: meshMove 25s ease-in-out infinite reverse;
+  opacity: 0.25;
+}
+
+.mesh-5 {
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  top: 10%;
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(90px);
+  background: radial-gradient(circle, hsl(38, 90%, 55%) 0%, transparent 65%);
+  animation: meshMove2 18s ease-in-out infinite reverse;
+  opacity: 0.2;
+}
+
+/* Light mode - Luxurious Gold Dynamic Backgrounds */
+.light .dynamic-bg {
+  background: linear-gradient(145deg, hsl(48, 25%, 96%) 0%, hsl(48, 22%, 93%) 50%, hsl(45, 20%, 90%) 100%);
+}
+
+.light .dynamic-bg::before {
+  opacity: 0.5;
+  background: radial-gradient(ellipse at center, hsl(45, 80%, 55%) 0%, hsl(43, 75%, 48%) 30%, transparent 60%);
+  filter: blur(80px);
+}
+
+.light .dynamic-bg::after {
+  opacity: 0.45;
+  background: radial-gradient(ellipse at center, hsl(48, 78%, 52%) 0%, hsl(45, 70%, 45%) 30%, transparent 55%);
+  filter: blur(70px);
+}
+
+.light .mesh-3 {
+  opacity: 0.4;
+  background: radial-gradient(ellipse at center, hsl(45, 75%, 55%) 0%, hsl(43, 68%, 48%) 40%, transparent 60%);
+  filter: blur(100px);
+}
+
+.light .mesh-4 {
+  opacity: 0.35;
+  background: radial-gradient(circle, hsl(48, 85%, 58%) 0%, transparent 50%);
+  filter: blur(80px);
+}
+
+.light .mesh-5 {
+  opacity: 0.3;
+  background: radial-gradient(circle, hsl(45, 72%, 52%) 0%, transparent 50%);
+  filter: blur(70px);
+}
+
+/* Light Mode Fractal Stripes */
+.light .fractal-stripe::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    hsl(45, 80%, 50% / 0.2) 20%,
+    hsl(45, 85%, 48% / 0.35) 50%,
+    hsl(45, 80%, 50% / 0.2) 80%,
+    transparent 100%
+  );
+}
+
+.light .fractal-stripe:nth-child(odd)::before {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    hsl(48, 75%, 52% / 0.15) 30%,
+    hsl(45, 80%, 50% / 0.28) 50%,
+    hsl(48, 75%, 52% / 0.15) 70%,
+    transparent 100%
+  );
+}
+
+.light .water-overlay {
+  background: 
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      hsl(45, 80%, 50% / 0.12) 25%,
+      transparent 50%,
+      hsl(48, 75%, 52% / 0.12) 75%,
+      transparent 100%
+    );
+  background-size: 200% 200%;
+}
+
+.light .shimmer-overlay::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(45, 85%, 55% / 0.15) 50%,
+    transparent 100%
+  );
+}
+
+/* Vertical Pulse Animation for Fractal Glass Effect */
+@keyframes verticalPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scaleY(1.02);
+  }
+}
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.03;
+}
+
+/* Glass effect */
+.glass {
+  background: hsl(var(--card) / 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--primary) / 0.2);
+}
+
+/* Gold border glow */
+.gold-border-glow {
+  border: 1px solid hsl(var(--primary) / 0.3);
+  box-shadow: 0 0 20px hsl(var(--primary) / 0.1), inset 0 0 20px hsl(var(--primary) / 0.05);
+}
+
+/* Shadow utilities */
+.shadow-gold {
+  box-shadow: 0 0 30px hsl(var(--primary) / 0.3);
+}
+
+.shadow-card {
+  box-shadow: 0 10px 40px -10px hsl(0 0% 0% / 0.5);
+}
+
+/* Card hover animations */
+.card-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.4);
+}
+
+/* Parallax Effects */
+@keyframes parallaxFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(2deg);
+  }
+}
+
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-slow {
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.parallax-fast {
+  transition: transform 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Smooth Page Transitions */
+.page-transition {
+  animation: pageEnter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Element Transitions */
+.element-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.element-transition-slow {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Staggered Animation Classes */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section reveal animation */
+@keyframes revealSection {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.reveal-section {
+  animation: revealSection 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Fade slide animations */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-slide-up { animation: fadeSlideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.fade-slide-down { animation: fadeSlideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.fade-slide-left { animation: fadeSlideLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+.fade-slide-right { animation: fadeSlideRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+/* Hover float effect */
+@keyframes hoverFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.hover-float:hover {
+  animation: hoverFloat 2s ease-in-out infinite;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .dynamic-bg,
+  .grain-overlay {
+    display: none !important;
+  }
+}
+
+/* Shimmer animation for skeleton loading */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Ripple Effect Animation */
+@keyframes ripple-animation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* User Location Pulse Animation */
+@keyframes pulse-location {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.user-location-marker {
+  animation: none;
+}
+
+/* Search Location Marker Style */
+.search-location-marker {
+  z-index: 2000 !important;
+}
+
+/* ========================================
+   Display Mode - Compact / Comfortable
+   ======================================== */
+
+/* Compact Mode Global Styles */
+.display-compact {
+  /* Base text sizes are smaller */
+  font-size: 14px;
+}
+
+.display-compact .leaflet-popup-content-wrapper {
+  padding: 6px !important;
+}
+
+.display-compact .leaflet-popup-content {
+  margin: 8px !important;
+  font-size: 12px !important;
+}
+
+.display-compact .gm-style-iw-c {
+  padding: 8px !important;
+}
+
+/* Comfortable Mode Global Styles */
+.display-comfortable {
+  font-size: 16px;
+}
+
+/* Map Popup Responsive Sizing */
+@media (max-width: 768px) {
+  .display-compact .leaflet-popup-content-wrapper,
+  .display-compact .gm-style-iw-c {
+    max-width: 280px !important;
+  }
+  
+  .display-compact .leaflet-popup-content {
+    max-width: 260px !important;
+    font-size: 11px !important;
+  }
+  
+  .display-comfortable .leaflet-popup-content-wrapper,
+  .display-comfortable .gm-style-iw-c {
+    max-width: 320px !important;
+  }
+  
+  .display-comfortable .leaflet-popup-content {
+    max-width: 300px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Navigation Route Animations */
+@keyframes pulse-route {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+@keyframes pulse-live {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.5); opacity: 0.1; }
+}
+
+.route-point-marker,
+.live-tracking-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Billboard Grid - Responsive columns */
+.billboard-grid {
+  grid-template-columns: 1fr !important;
+}
+
+@media (min-width: 768px) {
+  .billboard-grid {
+    grid-template-columns: repeat(var(--cards-per-row, 4), minmax(0, 1fr)) !important;
+  }
+}
